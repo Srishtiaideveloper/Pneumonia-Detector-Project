@@ -1,15 +1,26 @@
-# Chest X-Ray Pneumonia Detector xAi + Web app
+# Deep Learning Driven Pneumonia Classification on Chest X-Rays
 
 ## Project Overview
 
-Developed a pneumonia detection system using MobileNet-V3 with transfer learning, achieving 91% accuracy in detecting pneumonia from chest X-rays. Optimized the model for edge devices through knowledge distillation to reduce model size and improve performance in resource-constrained environments.
-Deployed the model on AWS SageMaker using Flask, ensuring seamless integration and scalability for production environments. Implemented Grad-CAM for model interpretability, visualizing CNN focus areas to enhance prediction accuracy and provide insight into model decision-making.
+Developed a deep learning-based pneumonia detection system using ResNet50 with transfer learning in PyTorch, achieving 97% classification accuracy on chest X-ray images.
+Applied data augmentation and K-Fold cross-validation to improve generalization.
+Performed hyperparameter tuning (learning rate, batch size, optimizer) for performance optimization.
+Integrated Grad-CAM to visualize decision-critical regions on X-rays, enhancing model transparency and interpretability.
 
 ## Dataset Overview
 
-- **Normal images count in training set:** 1349
-- **Pneumonia images count in training set:** 3883
-- **Total Count of images:** 5232
+- **Normal images count in training set:** 6399
+- **Pneumonia images count in training set:** 6343
+- **Total Count of images:** 12742
+
+## 🧪 Model Details
+
+- Framework: **PyTorch**
+- Architecture: **ResNet50** (pre-trained on ImageNet)
+- Optimizations:  
+  - Data augmentation (horizontal flip, rotation, scaling)  
+  - K-Fold Cross Validation (K=5)  
+  - Hyperparameter tuning (learning rate, batch size, optimizer)
 
 ## Project Structure
 
@@ -56,51 +67,19 @@ pip install -r requirements.txt
    ```
 3. Train the model using `model_training_code.ipynb`
 
-## Deployment Guide
-
-### 1. Local Deployment (Flask)
-
-1. Navigate to the `deployment/` folder and run:
-   ```bash
-   python app.py
-   ```
-2. The web app will be available at `http://127.0.0.1:5000`
-
-### 2. AWS EC2 Deployment
-
-1. Launch an EC2 instance with Ubuntu.
-2. Install dependencies:
-   ```bash
-   sudo apt update && sudo apt install python3-pip
-   pip install -r requirements.txt
-   ```
-3. Run the Flask app:
-   ```bash
-   python app.py
-   ```
-4. Configure security groups to allow inbound traffic on port 5000.
-
-## API Endpoints
-
-- `POST /predict` - Upload a chest X-ray and get a pneumonia prediction.
-
-
-
 ## Results & Interpretability
-- Achieved **91% accuracy**
-- Used **Grad-CAM** to visualize model focus areas for interpretability(xAI).
+- Achieved **97% accuracy**
+- Used **Grad-CAM** to visualize model focus areas for interpretability.
+
+## 📂 Tools & Libraries
+
+- **PyTorch**, **NumPy**, **OpenCV**
+- **scikit-learn**, **Matplotlib**, **Seaborn**
+- **Grad-CAM**, **Flask**, **AWS SageMaker**
 
 ---
 
-## Contact
-👤 **Author:** Sai Krishna Chowdary Chundru  
-📩 **Email:** [cchsaikrishnachowdary@gmail.com](mailto:cchsaikrishnachowdary@gmail.com)  
-🔗 **LinkedIn:** [linkedin.com/in/sai-krishna-chowdary-chundru](https://linkedin.com/in/sai-krishna-chowdary-chundru)  
-💻 **GitHub:** [github.com/sAI-2025](https://github.com/sAI-2025)  
+## 🧑‍💻 Developed By
 
----
-
-## License
-This project is licensed under the **MIT License** – feel free to use and modify!
-
-
+**Srishti**  
+[GitHub](https://github.com/Srishtiaideveloper)
